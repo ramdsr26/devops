@@ -1,0 +1,2021 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "PSD II services",
+"contact": {
+  "name": "API Support",
+  "url": "https://developer.temenos.com/",
+  "email": "developer@temenos.com"
+},		"license": {
+  "name": "TEMENOS",
+  "url": "https://developer.temenos.com/index.php/homepage/privacy-policy/"
+},
+  "x-logo": {
+    "url": "https://developer.temenos.com/wp-content/uploads/2019/10/Temenos_ColorHorizontal.png"
+},
+  
+ "description": "# Introduction\n \n\n> This page contains the documentation on how to use Temenos Sandbox through API calls.\n\n> \n\n# Authentication\nWhen you sign up for an account, you are given your first API key. You authenticate to the\nTEMENOS API by providing your secret key in the request header.\n\nNever share your secret keys. Keep them guarded and secure.",
+    "version": "v1.0.0"
+},
+  "host": "api.temenos.com",
+  "basePath": "/api/v1.0.0/",
+  "schemes": [ "http", "https" ],
+  
+  "tags": [
+		{
+			"name": "Account Information",
+			"description": "Holdings Cards APIs \n\n> Get and management of Holdings Cards"
+		},
+		{
+			"name": "Consent Management",
+			"description": "PSD II Consent management services \n\n>APIs to create and manage customer’s consent"
+		},
+		{
+			"name": "Open Banking Directory",
+			"description": "PSD II Open banking directory services \n\n>Updates the open banking directory entity record."
+		},
+		{
+			"name": "Payments",
+			"description": "PSD II Payment services \n\n> APIs to create and manage various types of payments such as recurring, SEPA and cross border payments."
+		}
+  ],
+  "x-tagGroups": [		
+		{
+			"name": "PSD2",
+			"tags": [
+				"Account Information",
+				"Consent Management",
+				"Open Banking Directory",
+				"Payments"
+			]
+		}
+	],
+  "security": [
+    {
+        "basicAuth": [ ]
+    } ],
+  "paths": {
+    "/holdings/cards": {
+      "get": {
+        "tags": [
+					"Account Information"
+        ],
+        "summary": "Retrieve a list of ThreeDSecure entries",
+        "operationId": "getCardIssues",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+					{
+						"name": "cardIssueId",
+						"in": "query",
+						"description": "The identifier of the issued card, consisting of three elements. The card type, a full stop and the card number. The card type must be a valid cardType. The card number may be any alphanumeric construction, e.g. VISA.1234567887654321 GC.1111222233334444 AB21.1111111122222222",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "accountId",
+						"in": "query",
+						"description": "The identifier of the account. Often referred to as the account number, yet for consistency this is always referred to as accountId.",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "issueDate",
+						"in": "query",
+						"description": "The date the item was issued.",
+						"required": false,
+						"type": "string",
+						"format": "date"
+					},
+					{
+						"name": "expiryDate",
+						"in": "query",
+						"description": "The date an agreement such as a credit facility or limit is due to expire",
+						"required": false,
+						"type": "string",
+						"format": "date"
+					},
+					{
+						"name": "cardStatus",
+						"in": "query",
+						"description": "The status of the card",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "page_size",
+						"in": "query",
+						"description": "The total number of records per page",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "page_start",
+						"in": "query",
+						"description": "The record from which the response should be displayed",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "page_token",
+						"in": "query",
+						"description": "Unique id expected to get as part of response from t24 on every enquiry request.",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "credentials",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "companyId",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+        "responses": {
+					"200": {
+						"description": "CardIssuesResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssuesResponse"
+						}
+					},
+					"default": {
+						"description": "QueryErrorResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+						}
+					}
+				}
+      }
+    },
+    "/holdings/cards/{cardIssueId}": {
+			"post": {
+				"operationId": "createCardIssue",
+				"produces": [
+					"application/json"
+        ],
+        "tags": [
+					"Account Information"
+        ],
+				"parameters": [
+					{
+						"name": "cardIssueId",
+						"in": "path",
+						"description": "The identifier of the issued card, consisting of three elements. The card type, a full stop and the card number. The card type must be a valid cardType. The card number may be any alphanumeric construction, e.g. VISA.1234567887654321 GC.1111222233334444 AB21.1111111122222222",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "payload",
+						"description": "body Payload",
+						"required": true,
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssue"
+						}
+					},
+					{
+						"name": "validate_only",
+						"in": "query",
+						"description": "The identifier to indicate if it is set to only validate or not.",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"name": "credentials",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "companyId",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "CardIssueResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
+						}
+					},
+					"default": {
+						"description": "ScreenErrorResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "updateCardIssue",
+				"produces": [
+					"application/json"
+        ],
+        "tags": [
+					"Holdings"
+        ],
+				"parameters": [
+					{
+						"name": "cardIssueId",
+						"in": "path",
+						"description": "The identifier of the issued card, consisting of three elements. The card type, a full stop and the card number. The card type must be a valid cardType. The card number may be any alphanumeric construction, e.g. VISA.1234567887654321 GC.1111222233334444 AB21.1111111122222222",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "payload",
+						"description": "body Payload",
+						"required": true,
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssue"
+						}
+					},
+					{
+						"name": "validate_only",
+						"in": "query",
+						"description": "The identifier to indicate if it is set to only validate or not.",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"name": "credentials",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "companyId",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "CardIssueResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
+						}
+					},
+					"default": {
+						"description": "ScreenErrorResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "deleteCardIssue",
+				"produces": [
+					"application/json"
+        ],
+        "tags": [
+					"Holdings"
+        ],
+				"parameters": [
+					{
+						"name": "cardIssueId",
+						"in": "path",
+						"description": "The identifier of the issued card, consisting of three elements. The card type, a full stop and the card number. The card type must be a valid cardType. The card number may be any alphanumeric construction, e.g. VISA.1234567887654321 GC.1111222233334444 AB21.1111111122222222",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "credentials",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "companyId",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "CardIssueResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
+						}
+					},
+					"default": {
+						"description": "ScreenErrorResponse",
+						"schema": {
+							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+						}
+					}
+				}
+			}
+    },
+    "/order/PSD2/payments/TPPrequests/{paymentId}": {
+      "get": {
+        "tags": [
+					"Payments"
+        ],
+                "summary": "Updates additional payment information for payment initiation requests",
+                "description": "Updates additional payment information for payment initiation requests made through PSD2 APIs. For PSD2 this API can be linked to 'Update PSU data for payment initiation and Update PSU Data for payment initiation cancellation' published API in accordance to open banking standards.",
+                "operationId": "updatePaymentResource",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "paymentId",
+                    "in": "path",
+                    "description": "Indicates the unique reference number of the payment",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "payload",
+                    "description": "body Payload",
+                    "required": true,
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentResource"
+                    }
+                },
+                {
+                    "name": "validate_only",
+                    "in": "query",
+                    "description": "The identifier to indicate if it is set to only validate or not.",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "PaymentResourceResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentResourceResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "ScreenErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessScreenErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemScreenErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        }
+                    }
+                }
+            }
+    },
+    "/order/PSD2/paymentsInitiation":
+    {
+      
+        "post":
+        {
+          "tags": [
+            "Payments"
+          ],
+            "summary": "Payment initiation for cross border credit transfers.",
+            "description": "Creates a payment order request initiation for cross border credit transfers.For PSD2 this API can be linked to 'Payment Initiation Request' published API in accordance to open banking standards to create a payment.",
+            "operationId": "createPaymentInitiation",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": true,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiation"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "PaymentInitiationResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiationResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/payments/{paymentId}/status":
+    {
+        "get":
+        {
+            "summary": "Retrieves the details of the payment",
+            "description": "Retrieves the payment status and all the necessary details of the payment specified with paymentId. For PSD2 this API can be linked to 'Get Payment Information and Payment initiation status request' published API in accordance to open banking standards to fetch the payment details.",
+            "operationId": "getPaymentStatus",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "paymentId",
+                "in": "path",
+                "description": "Indicates the unique reference number of the payment",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "name": "page_size",
+                "in": "query",
+                "description": "The total number of records per page",
+                "required": false,
+                "type": "integer",
+                "format": "int32"
+            },
+            {
+                "name": "page_start",
+                "in": "query",
+                "description": "The record from which the response should be displayed",
+                "required": false,
+                "type": "integer",
+                "format": "int32"
+            },
+            {
+                "name": "page_token",
+                "in": "query",
+                "description": "Unique id expected to get as part of response from t24 on every enquiry request.",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "PaymentStatusResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentStatusResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "QueryErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/QueryErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessQueryErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemQueryErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/payments/SEPAinitiation":
+    {
+        "post":
+        {"tags": [
+          "Payments"
+        ],
+            "summary": "Payment initiation for a SEPA credit transfer",
+            "description": "Creates a SEPA payment credit transfer request.For PSD2 this API can be linked to 'Payment Initiation Request' published API in accordance to open banking standards to create a SEPA payment.",
+            "operationId": "createSEPAPaymentInitiation",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": true,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAPaymentInitiation"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "SEPAPaymentInitiationResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAPaymentInitiationResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/standingOrdersInitiation/SEPA/{standingOrderId}":
+    {
+        "post":
+        {"tags": [
+          "Payments"
+        ],
+            "summary": "Initiates creation of SEPA standing order instruction",
+            "description": "Creates a standing order (periodic) payment initation request for SEPA credit transfers. For PSD2 this API can be linked to 'createSepaPayment' published API in accordance to open banking standards to create a periodic payment.",
+            "operationId": "createSEPAStandingOrderInitiation",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "standingOrderId",
+                "in": "path",
+                "description": "The unique standing order identifier",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": true,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAStandingOrderInitiation"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "SEPAStandingOrderInitiationResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAStandingOrderInitiationResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/standingOrdersInitiation/crossBorder/{standingOrderId}":
+    { 
+        "post":
+        {
+          "tags": [
+            "Payments"
+          ],
+            "summary": "Initiates creation of standing order instruction",
+            "description": "Creates a standing order(periodic) payment initiation request for cross border credit transfers. For PSD2 this API can be linked to 'createPeriodicPayment' published API in accordance to open banking standards to create a periodic payment.",
+            "operationId": "createPSD2StandingOrderInitiation",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "standingOrderId",
+                "in": "path",
+                "description": "The unique standing order identifier",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": true,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiation"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "PSD2StandingOrderInitiationResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiationResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/standingOrdersInitiation/{standingOrderId}":
+    {
+        "delete":
+        {"tags": [
+          "Payments"
+        ],
+            "summary": "Cancels a standing order instruction",
+            "description": "Cancels a standing order payment instruction",
+            "operationId": "deletePSD2StandingOrderInitiation",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "standingOrderId",
+                "in": "path",
+                "description": "The unique standing order identifier",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": false,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiation"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "PSD2StandingOrderInitiationResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiationResponse1"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/standingOrderApprovals/{standingOrderId}":
+    {
+        "post":
+        {"tags": [
+          "Payments"
+        ],
+            "summary": "Creates the standing order instruction request",
+            "description": "Creates the standing order (periodic) payment instruction from the initiated request",
+            "operationId": "approvePSD2StandingOrder",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "standingOrderId",
+                "in": "path",
+                "description": "The unique standing order identifier",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": true,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrder"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "PSD2StandingOrderResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/paymentsApprovals/{paymentId}":
+    {
+        "post":
+        {
+          "tags": [
+            "Payments"
+          ],
+            "summary": "Creates the payment transfer",
+            "description": "Creates the funds transfer payment from the initiated transfer request",
+            "operationId": "approvePayment",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "paymentId",
+                "in": "path",
+                "description": "Indicates the unique reference number of the payment",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": true,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/Payment"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "PaymentResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/payments/{paymentId}/subResources":
+    {
+        "get":
+        {
+          "tags": [
+            "Payments"
+          ],
+            "summary": "Retrieves payment sub resource information",
+            "description": "Retrieves the sub resource information for a particular payment. For PSD2, this API is used by 'get Authorisations', 'get SCA Status of payment authorisations', 'get SCA status of payment cancellations' and 'getcancellations' published APIs in accordance to open banking standards.",
+            "operationId": "getSubResources",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "paymentId",
+                "in": "path",
+                "description": "Indicates the unique reference number of the payment",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "name": "subResourceType",
+                "in": "query",
+                "description": "Indicates if the sub resource is created for authorization or cancellation of the PSD2 payment. Can contain values 'AUTH' or 'CANC' which indicates authorization and cancellation respectively.",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "subResourceId",
+                "in": "query",
+                "description": "Contains the sub resource identifier which is constructed of the payment Id, status of the payment and sequence number during authorisation or deletion of a payment. Applies to both implicit & explicit payment workflows. For example: FT0003003-AUTH-1",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "page_size",
+                "in": "query",
+                "description": "The total number of records per page",
+                "required": false,
+                "type": "integer",
+                "format": "int32"
+            },
+            {
+                "name": "page_start",
+                "in": "query",
+                "description": "The record from which the response should be displayed",
+                "required": false,
+                "type": "integer",
+                "format": "int32"
+            },
+            {
+                "name": "page_token",
+                "in": "query",
+                "description": "Unique id expected to get as part of response from t24 on every enquiry request.",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "SubResourcesResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SubResourcesResponse"
+                    }
+                },
+                "default":
+                {
+                    "description": "QueryErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/QueryErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessQueryErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemQueryErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/order/PSD2/paymentsInitiation/{paymentId}":
+    {
+        "delete":
+        {
+          "tags": [
+            "Payments"
+          ],
+            "summary": "Cancels a payment that has been initiated ",
+            "description": "Cancels a payment request that was initiated and updates the transaction status to CANC. For PSD2 this API can be linked to 'deletePayment' published API in accordance to open banking standards to delete an unauthorised payment.",
+            "operationId": "deletePaymentInitiation",
+            "produces": [ "application/json" ],
+            "parameters": [
+            {
+                "name": "paymentId",
+                "in": "path",
+                "description": "Indicates the unique reference number of the payment",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "in": "body",
+                "name": "payload",
+                "description": "body Payload",
+                "required": false,
+                "schema":
+                {
+                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiation"
+                }
+            },
+            {
+                "name": "validate_only",
+                "in": "query",
+                "description": "The identifier to indicate if it is set to only validate or not.",
+                "required": false,
+                "type": "boolean"
+            },
+            {
+                "name": "credentials",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "companyId",
+                "in": "header",
+                "required": false,
+                "type": "string"
+            } ],
+            "responses":
+            {
+                "200":
+                {
+                    "description": "PaymentInitiationResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiationResponse1"
+                    }
+                },
+                "default":
+                {
+                    "description": "ScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                    }
+                },
+                "400":
+                {
+                    "description": "BusinessScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                    }
+                },
+                "500":
+                {
+                    "description": "SystemScreenErrorResponse",
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                    }
+                }
+            }
+        }
+    },
+    "/reference/PSD2/OpenBankingDirectories":
+    {
+      "post":
+      {
+        "tags": [
+          "Open Banking Directory"
+        ],
+          "summary": "Updates entity record",
+          "description": "Updates the entity record for the entity identified by the global urn. For PSD2 this API can be linked to \"updateOBDNotification\" published API in accordance to open banking standards to update the entity record.",
+          "operationId": "getPRETAOBDNotification",
+          "produces": [ "application/json" ],
+          "parameters": [
+          {
+              "in": "body",
+              "name": "payload",
+              "description": "body Payload",
+              "required": true,
+              "schema":
+              {
+                  "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/PRETAOBDNotification"
+              }
+          },
+          {
+              "name": "validate_only",
+              "in": "query",
+              "description": "The identifier to indicate if it is set to only validate or not.",
+              "required": false,
+              "type": "boolean"
+          },
+          {
+              "name": "credentials",
+              "in": "header",
+              "required": false,
+              "type": "string"
+          },
+          {
+              "name": "companyId",
+              "in": "header",
+              "required": false,
+              "type": "string"
+          } ],
+          "responses":
+          {
+              "200":
+              {
+                  "description": "PRETAOBDNotificationResponse",
+                  "schema":
+                  {
+                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/PRETAOBDNotificationResponse"
+                  }
+              },
+              "default":
+              {
+                  "description": "ScreenErrorResponse",
+                  "schema":
+                  {
+                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                  }
+              },
+              "400":
+              {
+                  "description": "BusinessScreenErrorResponse",
+                  "schema":
+                  {
+                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                  }
+              },
+              "500":
+              {
+                  "description": "SystemScreenErrorResponse",
+                  "schema":
+                  {
+                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                  }
+              }
+          }
+      }
+  },       
+        "/party/PSD2/customers/consentInititation":
+        {
+            "post":
+            {
+              "tags": [
+                "Consent Management"
+              ],
+                "summary": "Consent management.",
+                "description": "Consent creation. For PSD2, this API can be linked to 'create consent' and 'delete consent'published API in accordance to open banking standards. ",
+                "operationId": "createConsent",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "validate_only",
+                    "in": "query",
+                    "description": "The identifier to indicate if it is set to only validate or not.",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "in": "body",
+                    "name": "payload",
+                    "required": true,
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent"
+                    }
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "createConsentResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "ArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/party/PSD2/customers/consentInititation/{consentId}":
+        {
+            "put":
+            {
+              "tags": [
+                "Consent Management"
+              ],  
+              "summary": "Consent Initiation ",
+                "description": "Consent initiation and deletion. For PSD2, this API can be linked to 'initiateConsent' published API in accordance to open banking standards. ",
+                "operationId": "initiateConsent",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "validate_only",
+                    "in": "query",
+                    "description": "The identifier to indicate if it is set to only validate or not.",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "in": "body",
+                    "name": "payload",
+                    "required": true,
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent"
+                    }
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "initiateConsentResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "ArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete":
+            {
+              "tags": [
+                "Consent Management"
+              ],
+                "summary": "Consent deletion.",
+                "description": "Consent initiation and deletion. For PSD2, this API can be linked to 'initiateConsent' published API in accordance to open banking standards. ",
+                "operationId": "deleteConsent",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "validate_only",
+                    "in": "query",
+                    "description": "The identifier to indicate if it is set to only validate or not.",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "deleteConsentResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "ArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                        }
+                    }
+                }
+            },
+            "parameters": [
+            {
+                "name": "consentId",
+                "in": "path",
+                "required": true,
+                "type": "string"
+            } ]
+        },
+        "/party/PSD2/customers/consentApprovals/{consentId}":
+        {
+            "put":
+            {
+              "tags": [
+                "Consent Management"
+              ],
+                "summary": "Consent authorization",
+                "description": "Consent authorization. For PSD2, this API can be linked to 'approveConsent' published API in accordance to open banking standards. ",
+                "operationId": "approveConsent",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "validate_only",
+                    "in": "query",
+                    "description": "The identifier to indicate if it is set to only validate or not.",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "in": "body",
+                    "name": "payload",
+                    "required": true,
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent"
+                    }
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "approveConsentResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "ArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                        }
+                    }
+                }
+            },
+            "parameters": [
+            {
+                "name": "consentId",
+                "in": "path",
+                "required": true,
+                "type": "string"
+            } ]
+        },
+        "/party/PSD2/customers/consents/{consentId}":
+        {
+            "get":
+            {
+              "tags": [
+                "Consent Management"
+              ],
+                "summary": "Retrieves consent record",
+                "description": "Retrieves entire consent record. For PSD2, this API can be linked to 'get consent status request' published API in accordance to open banking standards.",
+                "operationId": "getConsentRequest",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "consentId",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "page_size",
+                    "in": "query",
+                    "description": "The total number of records per page",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "page_start",
+                    "in": "query",
+                    "description": "The record from which the response should be displayed",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "page_token",
+                    "in": "query",
+                    "description": "Unique id expected to get as part of response from t24 on every enquiry request.",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "ConsentRequestResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentRequestResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "QueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessQueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemQueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put":
+            {
+              "tags": [
+                "Consent Management"
+              ],
+                "summary": "Consent withdrawal.",
+                "description": "Consent withdrawal. For PSD2, this API can be linked to 'withdrawConsent' published API in accordance to open banking standards. ",
+                "operationId": "withdrawConsent",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "validate_only",
+                    "in": "query",
+                    "description": "The identifier to indicate if it is set to only validate or not.",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "in": "body",
+                    "name": "payload",
+                    "required": true,
+                    "schema":
+                    {
+                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent1"
+                    }
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "withdrawConsentResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse1"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "ArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemArrangementErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                        }
+                    }
+                }
+            },
+            "parameters": [
+            {
+                "name": "consentId",
+                "in": "path",
+                "required": true,
+                "type": "string"
+            } ]
+        },
+        "/party/PSD2/customers/consents/{consentId}/status":
+        {
+            "get":
+            {
+              "tags": [
+                "Consent Management"
+              ],
+                "summary": "Retrieves consent status",
+                "description": "Retrieves status of the consent record. For PSD2, this API can be linked to 'get consent status request' published API in accordance to open banking standards.",
+                "operationId": "getConsentStatus",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "consentId",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "page_size",
+                    "in": "query",
+                    "description": "The total number of records per page",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "page_start",
+                    "in": "query",
+                    "description": "The record from which the response should be displayed",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "page_token",
+                    "in": "query",
+                    "description": "Unique id expected to get as part of response from t24 on every enquiry request.",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "ConsentStatusResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentStatusResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "QueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessQueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemQueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/party/PSD2/customers/{customerId}/consents":
+        {
+            "get":
+            {
+              "tags": [
+                "Consent Management"
+              ],
+                "summary": "Retrieves the consent information and status of TPP",
+                "description": "Retrieves the detailed consent information along with the status of third party payment provider, with specified consent id, consent status and customer. For PSD2 this API can be linked to 'getConsentData' published API in accordance to open banking standards to return details of all consents.",
+                "operationId": "getConsentData",
+                "produces": [ "application/json" ],
+                "parameters": [
+                {
+                    "name": "customerId",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "consentStatus",
+                    "in": "query",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "consentId",
+                    "in": "query",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "page_size",
+                    "in": "query",
+                    "description": "The total number of records per page",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "page_start",
+                    "in": "query",
+                    "description": "The record from which the response should be displayed",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "page_token",
+                    "in": "query",
+                    "description": "Unique id expected to get as part of response from t24 on every enquiry request.",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "credentials",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "companyId",
+                    "in": "header",
+                    "required": false,
+                    "type": "string"
+                } ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "ConsentDataResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentDataResponse"
+                        }
+                    },
+                    "default":
+                    {
+                        "description": "QueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "BusinessQueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                        }
+                    },
+                    "500":
+                    {
+                        "description": "SystemQueryErrorResponse",
+                        "schema":
+                        {
+                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+
+  },
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  }
+}
