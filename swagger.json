@@ -143,13 +143,13 @@
 					"200": {
 						"description": "CardIssuesResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssuesResponse"
+							"$ref": "t24-linksholdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssuesResponse"
 						}
 					},
 					"default": {
 						"description": "QueryErrorResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
 						}
 					}
 				}
@@ -178,7 +178,7 @@
 						"description": "body Payload",
 						"required": true,
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssue"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssue"
 						}
 					},
 					{
@@ -205,13 +205,13 @@
 					"200": {
 						"description": "CardIssueResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
 						}
 					},
 					"default": {
 						"description": "ScreenErrorResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
 						}
 					}
 				}
@@ -238,7 +238,7 @@
 						"description": "body Payload",
 						"required": true,
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssue"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssue"
 						}
 					},
 					{
@@ -265,13 +265,13 @@
 					"200": {
 						"description": "CardIssueResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
 						}
 					},
 					"default": {
 						"description": "ScreenErrorResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
 						}
 					}
 				}
@@ -309,13 +309,13 @@
 					"200": {
 						"description": "CardIssueResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/CardIssueResponse"
 						}
 					},
 					"default": {
 						"description": "ScreenErrorResponse",
 						"schema": {
-							"$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+							"$ref": "https://ramdsr26.github.io/devops/docs/holdings-cards-service-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
 						}
 					}
 				}
@@ -345,7 +345,7 @@
                     "required": true,
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentResource"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentResource"
                     }
                 },
                 {
@@ -374,7 +374,7 @@
                         "description": "PaymentResourceResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentResourceResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentResourceResponse"
                         }
                     },
                     "default":
@@ -382,7 +382,7 @@
                         "description": "ScreenErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                         }
                     },
                     "400":
@@ -390,7 +390,7 @@
                         "description": "BusinessScreenErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                         }
                     },
                     "500":
@@ -398,7 +398,7 @@
                         "description": "SystemScreenErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                         }
                     }
                 }
@@ -424,7 +424,7 @@
                 "required": true,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiation"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiation"
                 }
             },
             {
@@ -453,7 +453,7 @@
                     "description": "PaymentInitiationResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiationResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiationResponse"
                     }
                 },
                 "default":
@@ -461,7 +461,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -469,7 +469,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -477,7 +477,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -541,7 +541,7 @@
                     "description": "PaymentStatusResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentStatusResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentStatusResponse"
                     }
                 },
                 "default":
@@ -549,7 +549,7 @@
                     "description": "QueryErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/QueryErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/QueryErrorResponse"
                     }
                 },
                 "400":
@@ -557,7 +557,7 @@
                     "description": "BusinessQueryErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
                     }
                 },
                 "500":
@@ -565,7 +565,7 @@
                     "description": "SystemQueryErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
                     }
                 }
             }
@@ -589,7 +589,7 @@
                 "required": true,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAPaymentInitiation"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SEPAPaymentInitiation"
                 }
             },
             {
@@ -618,7 +618,7 @@
                     "description": "SEPAPaymentInitiationResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAPaymentInitiationResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SEPAPaymentInitiationResponse"
                     }
                 },
                 "default":
@@ -626,7 +626,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -634,7 +634,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -642,7 +642,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -673,7 +673,7 @@
                 "required": true,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAStandingOrderInitiation"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SEPAStandingOrderInitiation"
                 }
             },
             {
@@ -702,7 +702,7 @@
                     "description": "SEPAStandingOrderInitiationResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SEPAStandingOrderInitiationResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SEPAStandingOrderInitiationResponse"
                     }
                 },
                 "default":
@@ -710,7 +710,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -718,7 +718,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -726,7 +726,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -758,7 +758,7 @@
                 "required": true,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiation"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiation"
                 }
             },
             {
@@ -787,7 +787,7 @@
                     "description": "PSD2StandingOrderInitiationResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiationResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiationResponse"
                     }
                 },
                 "default":
@@ -795,7 +795,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -803,7 +803,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -811,7 +811,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -842,7 +842,7 @@
                 "required": false,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiation"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiation"
                 }
             },
             {
@@ -871,7 +871,7 @@
                     "description": "PSD2StandingOrderInitiationResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiationResponse1"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderInitiationResponse1"
                     }
                 },
                 "default":
@@ -879,7 +879,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -887,7 +887,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -895,7 +895,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -926,7 +926,7 @@
                 "required": true,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrder"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrder"
                 }
             },
             {
@@ -955,7 +955,7 @@
                     "description": "PSD2StandingOrderResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PSD2StandingOrderResponse"
                     }
                 },
                 "default":
@@ -963,7 +963,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -971,7 +971,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -979,7 +979,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -1011,7 +1011,7 @@
                 "required": true,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/Payment"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/Payment"
                 }
             },
             {
@@ -1040,7 +1040,7 @@
                     "description": "PaymentResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentResponse"
                     }
                 },
                 "default":
@@ -1048,7 +1048,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -1056,7 +1056,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -1064,7 +1064,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -1145,7 +1145,7 @@
                     "description": "SubResourcesResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SubResourcesResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SubResourcesResponse"
                     }
                 },
                 "default":
@@ -1153,7 +1153,7 @@
                     "description": "QueryErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/QueryErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/QueryErrorResponse"
                     }
                 },
                 "400":
@@ -1161,7 +1161,7 @@
                     "description": "BusinessQueryErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
                     }
                 },
                 "500":
@@ -1169,7 +1169,7 @@
                     "description": "SystemQueryErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
                     }
                 }
             }
@@ -1201,7 +1201,7 @@
                 "required": false,
                 "schema":
                 {
-                    "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiation"
+                    "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiation"
                 }
             },
             {
@@ -1230,7 +1230,7 @@
                     "description": "PaymentInitiationResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiationResponse1"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/PaymentInitiationResponse1"
                     }
                 },
                 "default":
@@ -1238,7 +1238,7 @@
                     "description": "ScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/ScreenErrorResponse"
                     }
                 },
                 "400":
@@ -1246,7 +1246,7 @@
                     "description": "BusinessScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                     }
                 },
                 "500":
@@ -1254,7 +1254,7 @@
                     "description": "SystemScreenErrorResponse",
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/payments-v2.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                     }
                 }
             }
@@ -1279,7 +1279,7 @@
               "required": true,
               "schema":
               {
-                  "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/PRETAOBDNotification"
+                  "$ref": "https://ramdsr26.github.io/devops/docs/OBDNotification-v1.0.0-swagger.json#/definitions/PRETAOBDNotification"
               }
           },
           {
@@ -1308,7 +1308,7 @@
                   "description": "PRETAOBDNotificationResponse",
                   "schema":
                   {
-                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/PRETAOBDNotificationResponse"
+                      "$ref": "https://ramdsr26.github.io/devops/docs/OBDNotification-v1.0.0-swagger.json#/definitions/PRETAOBDNotificationResponse"
                   }
               },
               "default":
@@ -1316,7 +1316,7 @@
                   "description": "ScreenErrorResponse",
                   "schema":
                   {
-                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
+                      "$ref": "https://ramdsr26.github.io/devops/docs/OBDNotification-v1.0.0-swagger.json#/definitions/ScreenErrorResponse"
                   }
               },
               "400":
@@ -1324,7 +1324,7 @@
                   "description": "BusinessScreenErrorResponse",
                   "schema":
                   {
-                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
+                      "$ref": "https://ramdsr26.github.io/devops/docs/OBDNotification-v1.0.0-swagger.json#/definitions/BusinessScreenErrorResponse"
                   }
               },
               "500":
@@ -1332,7 +1332,7 @@
                   "description": "SystemScreenErrorResponse",
                   "schema":
                   {
-                      "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/OBDNotification-v1.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
+                      "$ref": "https://ramdsr26.github.io/devops/docs/OBDNotification-v1.0.0-swagger.json#/definitions/SystemScreenErrorResponse"
                   }
               }
           }
@@ -1363,7 +1363,7 @@
                     "required": true,
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/Consent"
                     }
                 },
                 {
@@ -1385,7 +1385,7 @@
                         "description": "createConsentResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
                         }
                     },
                     "default":
@@ -1393,7 +1393,7 @@
                         "description": "ArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
                         }
                     },
                     "400":
@@ -1401,7 +1401,7 @@
                         "description": "BusinessArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
                         }
                     },
                     "500":
@@ -1409,7 +1409,7 @@
                         "description": "SystemArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
                         }
                     }
                 }
@@ -1440,7 +1440,7 @@
                     "required": true,
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/Consent"
                     }
                 },
                 {
@@ -1462,7 +1462,7 @@
                         "description": "initiateConsentResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
                         }
                     },
                     "default":
@@ -1470,7 +1470,7 @@
                         "description": "ArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
                         }
                     },
                     "400":
@@ -1478,7 +1478,7 @@
                         "description": "BusinessArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
                         }
                     },
                     "500":
@@ -1486,7 +1486,7 @@
                         "description": "SystemArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
                         }
                     }
                 }
@@ -1527,7 +1527,7 @@
                         "description": "deleteConsentResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
                         }
                     },
                     "default":
@@ -1535,7 +1535,7 @@
                         "description": "ArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
                         }
                     },
                     "400":
@@ -1543,7 +1543,7 @@
                         "description": "BusinessArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
                         }
                     },
                     "500":
@@ -1551,7 +1551,7 @@
                         "description": "SystemArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
                         }
                     }
                 }
@@ -1589,7 +1589,7 @@
                     "required": true,
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/Consent"
                     }
                 },
                 {
@@ -1611,7 +1611,7 @@
                         "description": "approveConsentResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse"
                         }
                     },
                     "default":
@@ -1619,7 +1619,7 @@
                         "description": "ArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
                         }
                     },
                     "400":
@@ -1627,7 +1627,7 @@
                         "description": "BusinessArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
                         }
                     },
                     "500":
@@ -1635,7 +1635,7 @@
                         "description": "SystemArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
                         }
                     }
                 }
@@ -1708,7 +1708,7 @@
                         "description": "ConsentRequestResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentRequestResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentRequestResponse"
                         }
                     },
                     "default":
@@ -1716,7 +1716,7 @@
                         "description": "QueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
                         }
                     },
                     "400":
@@ -1724,7 +1724,7 @@
                         "description": "BusinessQueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
                         }
                     },
                     "500":
@@ -1732,7 +1732,7 @@
                         "description": "SystemQueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
                         }
                     }
                 }
@@ -1760,7 +1760,7 @@
                     "required": true,
                     "schema":
                     {
-                        "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/Consent1"
+                        "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/Consent1"
                     }
                 },
                 {
@@ -1782,7 +1782,7 @@
                         "description": "withdrawConsentResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse1"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentResponse1"
                         }
                     },
                     "default":
@@ -1790,7 +1790,7 @@
                         "description": "ArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ArrangementErrorResponse"
                         }
                     },
                     "400":
@@ -1798,7 +1798,7 @@
                         "description": "BusinessArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessArrangementErrorResponse"
                         }
                     },
                     "500":
@@ -1806,7 +1806,7 @@
                         "description": "SystemArrangementErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemArrangementErrorResponse"
                         }
                     }
                 }
@@ -1879,7 +1879,7 @@
                         "description": "ConsentStatusResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentStatusResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentStatusResponse"
                         }
                     },
                     "default":
@@ -1887,7 +1887,7 @@
                         "description": "QueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
                         }
                     },
                     "400":
@@ -1895,7 +1895,7 @@
                         "description": "BusinessQueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
                         }
                     },
                     "500":
@@ -1903,7 +1903,7 @@
                         "description": "SystemQueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
                         }
                     }
                 }
@@ -1981,7 +1981,7 @@
                         "description": "ConsentDataResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/ConsentDataResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/ConsentDataResponse"
                         }
                     },
                     "default":
@@ -1989,7 +1989,7 @@
                         "description": "QueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/QueryErrorResponse"
                         }
                     },
                     "400":
@@ -1997,7 +1997,7 @@
                         "description": "BusinessQueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/BusinessQueryErrorResponse"
                         }
                     },
                     "500":
@@ -2005,7 +2005,7 @@
                         "description": "SystemQueryErrorResponse",
                         "schema":
                         {
-                            "$ref": "http://lj9dm2z2.temenosgroup.com/APIDocs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
+                            "$ref": "https://ramdsr26.github.io/devops/docs/consent-v1.0.0-swagger.json#/definitions/SystemQueryErrorResponse"
                         }
                     }
                 }
