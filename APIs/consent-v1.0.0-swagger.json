@@ -1,9 +1,8 @@
 {
     "swagger": "2.0",
     "info":
-    {
-       
-         "description": "# Introduction\n \n\n> This page contains the documentation on how to use APIs to create and manage customer’s consent.\n\n> \n\n# Authentication\nWhen you sign up for an account, you are given your first API key. You authenticate to the\nTEMENOS API by providing your secret key in the request header.\n\nNever share your secret keys. Keep them guarded and secure.",
+    {       
+        "description": "# Introduction\n \n\n> APIs to create and manage customer’s consent.",
         "version": "v1.0.0",
         "title": "PSD II Consent management services"
     },
