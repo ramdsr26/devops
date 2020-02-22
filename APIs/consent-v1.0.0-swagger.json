@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info":
     {       
-        "description": "# Introduction\n \n\n> APIs to create and manage customer’s consent.",
+        "description": "APIs to create and manage customer’s consent.",
         "version": "v1.0.0",
         "title": "PSD II Consent management services"
     },
